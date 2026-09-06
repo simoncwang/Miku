@@ -1,3 +1,23 @@
+/* Define palette tokens and map them to semantic Obsidian color variables here. */
+
+:root {
+	--obsidian-theme-colors-ready: initial;
+}
+
+/* Define the theme's spacing and layout scale here. */
+
+:root {
+	--obsidian-theme-spacing-ready: initial;
+}
+
+/* Define font families, sizes, line heights, and heading variables here. */
+
+:root {
+	--obsidian-theme-typography-ready: initial;
+}
+
+/* Define corner-radius variables here. */
+
 body {
 	--radius-s: 0px;
 	--radius-m: 0px;
@@ -10,9 +30,13 @@ body {
 	--slider-thumb-radius: 0px;
 }
 
-.workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
-	display: none;
+/* Style reading view and editor content here. */
+
+:root {
+	--obsidian-theme-editor-ready: initial;
 }
+
+/* Style icons here. */
 
 svg * {
 	stroke-linecap: square;
@@ -20,6 +44,8 @@ svg * {
 	rx: 0;
 	ry: 0;
 }
+
+/* Style menus, prompts, suggestions, and popovers here. */
 
 .menu {
 	padding: var(--size-2-1);
@@ -31,4 +57,17 @@ svg * {
 
 .menu-separator {
 	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+}
+
+/* Style sidebars, navigation, and the file explorer here. */
+
+:root {
+	--obsidian-theme-navigation-ready: initial;
+}
+
+/* Style workspace tabs here. */
+
+.workspace-tab-header.is-active::before,
+.workspace-tab-header.is-active::after {
+	display: none;
 }

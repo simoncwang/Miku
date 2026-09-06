@@ -1,0 +1,8 @@
+/* Style icons here. */
+
+svg * {
+	stroke-linecap: square;
+	stroke-linejoin: miter;
+	rx: 0;
+	ry: 0;
+}

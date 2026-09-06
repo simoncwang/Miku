@@ -10,16 +10,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [22.x, 24.x, 26.x]
-
     steps:
       - uses: actions/checkout@v7
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         uses: actions/setup-node@v7
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          node-version: 24
+          cache: npm
       - run: npm ci
-      - run: npm run lint
+      - run: npm run check
+      - name: Verify generated theme is committed
+        run: git diff --exit-code -- theme.css

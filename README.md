@@ -26,9 +26,57 @@ Once you have the repository locally on your computer, there are a couple of pla
    - **version** is the version of your theme.
    - **minAppVersion** should only be changed as you add new CSS from Obsidian updates.
 
-After you have those fields configured, all that's left to do is add your styles! All of your CSS needs to be inside the file `theme.css` as a part of your [release](#releasing-versions).
+After you have those fields configured, add your styles under `src/`. The build generates the root-level `theme.css` used by Obsidian and included in each [release](#releasing-versions).
 
 For a deeper walkthrough, see the official [Build a theme](https://docs.obsidian.md/Themes/App+themes/Build+a+theme) tutorial.
+
+## Architecture
+
+Theme styles are organized as small source files and compiled into the single `theme.css` file that Obsidian loads.
+
+```text
+src/
+├── index.css
+├── foundations/
+│   ├── colors.css
+│   ├── spacing.css
+│   ├── typography.css
+│   └── radii.css
+└── components/
+    ├── editor.css
+    ├── icons.css
+    ├── menus.css
+    ├── navigation.css
+    └── tabs.css
+
+theme.css
+```
+
+`src/index.css` is the build entry point and controls import order. Files under `src/` are the authored source; `theme.css` is generated output. It remains committed so the repository can be cloned directly into an Obsidian vault and used without Node.js.
+
+## Development
+
+Install development dependencies once:
+
+```bash
+npm install
+```
+
+Start the development watcher:
+
+```bash
+npm run dev
+```
+
+Make style changes under `src/`, not directly in `theme.css`. While the watcher is running, saving a source file automatically rebuilds `theme.css` for local testing in Obsidian.
+
+Before committing, build and validate the theme:
+
+```bash
+npm run check
+```
+
+Commit both the source changes and generated `theme.css`.
 
 ## Preparing your theme for the community directory
 
@@ -36,7 +84,7 @@ Before you can submit your theme to the [community directory](https://community.
 
 Review the [Theme guidelines](https://docs.obsidian.md/Themes/App+themes/Theme+guidelines) for best practices, such as using CSS variables, avoiding `!important`, and keeping assets local. Themes that don't follow them are more likely to break on future Obsidian versions or get flagged during review.
 
-This template already includes [`stylelint-config-obsidianmd`](https://github.com/obsidianmd/stylelint-config), which enforces the same CSS rules used during theme review. Run `npm install` once, then `npm run lint` to check `theme.css` against them. This also runs automatically on every pull request via the [lint workflow](.github/workflows/lint.yml).
+This template includes [`stylelint-config-obsidianmd`](https://github.com/obsidianmd/stylelint-config), which enforces the same CSS rules used during theme review. Run `npm run check` to lint the source, rebuild `theme.css`, and lint the generated result. This also runs automatically on pushes and pull requests through the [lint workflow](.github/workflows/lint.yml).
 
 ### Add a screenshot thumbnail
 
@@ -49,7 +97,7 @@ The recommended size is 512x288.
 
 Themes support [GitHub Releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository), introduced in v0.16 of Obsidian. This lets you specify which versions of your theme are compatible with which versions of Obsidian.
 
-This repository already includes a [GitHub Actions workflow](.github/workflows/release.yml) that automates this. Pushing a tag matching your `manifest.json` version creates a draft release with `manifest.json` and `theme.css` attached, which you can then review and publish. See [Release your theme with GitHub Actions](https://docs.obsidian.md/Themes/App+themes/Release+your+theme+with+GitHub+Actions) for the full walkthrough.
+This repository includes a [GitHub Actions workflow](.github/workflows/release.yml) that installs dependencies, validates the source, rebuilds `theme.css`, and verifies that the generated file is committed. Pushing a tag matching your `manifest.json` version then creates a draft release with `manifest.json` and `theme.css` attached. See [Release your theme with GitHub Actions](https://docs.obsidian.md/Themes/App+themes/Release+your+theme+with+GitHub+Actions) for the full walkthrough.
 
 Before you push a tag, make sure `versions.json` is up to date. This file maps your theme's version to the minimum Obsidian version it's compatible with:
 
@@ -69,6 +117,16 @@ For the initial release of your theme, you shouldn't need to make any changes to
 ```
 
 The "key" is your theme's version, and the "value" is the minimum version of Obsidian that version is compatible with. If a new version of your theme only works with an Insider build of Obsidian, set this value accordingly, so users on older versions of Obsidian won't be prompted to update to a version that won't work for them.
+
+To create a patch version and push its commit and tag:
+
+```bash
+npm run check
+npm version patch --tag-version-prefix=""
+git push --follow-tags
+```
+
+Use `minor` or `major` instead of `patch` when appropriate. The version command synchronizes `package.json`, `manifest.json`, and `versions.json`, then creates the release commit and tag locally. The release workflow starts when that tag is pushed.
 
 ## Submit your theme for review
 

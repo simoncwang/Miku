@@ -1,0 +1,5 @@
+/* Style sidebars, navigation, and the file explorer here. */
+
+:root {
+	--obsidian-theme-navigation-ready: initial;
+}

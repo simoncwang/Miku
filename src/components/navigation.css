@@ -1,5 +1,19 @@
-/* Style sidebars, navigation, and the file explorer here. */
+/* Sidebars and file navigation. */
 
-:root {
-	--obsidian-theme-navigation-ready: initial;
+.theme-dark,
+.theme-light {
+	--titlebar-background: var(--background-secondary-alt);
+	--titlebar-background-focused: var(--background-secondary);
+	--ribbon-background: var(--background-secondary);
+	--ribbon-background-collapsed: var(--background-secondary-alt);
+	--file-header-background: var(--background-primary);
+	--file-header-background-focused: var(--background-primary);
+	--status-bar-background: var(--background-secondary);
+	--nav-item-color: var(--text-muted);
+	--nav-item-color-hover: var(--text-normal);
+	--nav-item-color-active: var(--text-accent);
+	--nav-item-color-selected: var(--text-normal);
+	--nav-item-background-hover: var(--background-modifier-hover);
+	--nav-item-background-active: color-mix(in srgb, var(--interactive-accent) 18%, transparent);
+	--nav-item-background-selected: var(--background-modifier-active-hover);
 }

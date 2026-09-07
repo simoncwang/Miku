@@ -1,4 +1,6 @@
-This is a sample theme for Obsidian ([https://obsidian.md](https://obsidian.md/)).
+# Miku
+
+An Obsidian theme inspired by Hatsune Miku's charcoal, cyan, white, and pink color palette.
 
 ## First time creating a theme?
 

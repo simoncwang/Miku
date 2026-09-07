@@ -1,5 +1,16 @@
 /* Style menus, prompts, suggestions, and popovers here. */
 
+.theme-dark,
+.theme-light {
+	--menu-background: var(--background-secondary);
+	--menu-border-color: var(--divider-color);
+	--modal-background: var(--background-primary);
+	--modal-border-color: var(--divider-color);
+	--prompt-background: var(--background-primary);
+	--popover-background: var(--background-primary);
+	--suggestion-background: var(--background-secondary);
+}
+
 .menu {
 	padding: var(--size-2-1);
 }

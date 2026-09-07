@@ -1,5 +1,199 @@
-/* Define palette tokens and map them to semantic Obsidian color variables here. */
+/* Palette sampled from references/miku.png. */
 
-:root {
-	--obsidian-theme-colors-ready: initial;
+body {
+	--miku-black: #111318;
+	--miku-ink: #1f1f25;
+	--miku-charcoal: #2f2e35;
+	--miku-slate: #3a3d43;
+	--miku-graphite: #4d494d;
+	--miku-muted: #686566;
+	--miku-steel: #a5b4be;
+	--miku-silver: #d1dce0;
+	--miku-white: #f9f8f7;
+	--miku-cyan-deep: #2b6670;
+	--miku-cyan: #2f8e9a;
+	--miku-teal: #4dc5c8;
+	--miku-cyan-mid: #6db2b7;
+	--miku-cyan-soft: #90cbca;
+	--miku-cyan-pale: #b6e2e2;
+	--miku-pink: #d94f7c;
+	--miku-pink-muted: #b05976;
+}
+
+.theme-dark {
+	color-scheme: dark;
+
+	/* Obsidian neutral scale. */
+	--color-base-00: var(--miku-black);
+	--color-base-05: #17181e;
+	--color-base-10: var(--miku-ink);
+	--color-base-20: #27272e;
+	--color-base-25: var(--miku-charcoal);
+	--color-base-30: var(--miku-slate);
+	--color-base-35: #45474e;
+	--color-base-40: var(--miku-graphite);
+	--color-base-50: var(--miku-muted);
+	--color-base-60: #84979c;
+	--color-base-70: var(--miku-steel);
+	--color-base-100: var(--miku-white);
+
+	/* Accent and semantic colors. */
+	--accent-h: 182;
+	--accent-s: 52%;
+	--accent-l: 54%;
+	--color-accent: var(--miku-teal);
+	--color-accent-1: var(--miku-cyan-soft);
+	--color-accent-2: var(--miku-cyan-pale);
+	--color-red: var(--miku-pink);
+	--color-orange: #d4b5ba;
+	--color-yellow: var(--miku-cyan-pale);
+	--color-green: var(--miku-cyan-mid);
+	--color-cyan: var(--miku-teal);
+	--color-blue: var(--miku-cyan);
+	--color-purple: #8497ad;
+	--color-pink: var(--miku-pink);
+
+	/* Surfaces. */
+	--background-primary: var(--miku-ink);
+	--background-primary-alt: #27272e;
+	--background-secondary: #17181e;
+	--background-secondary-alt: var(--miku-black);
+	--background-modifier-hover: var(--miku-charcoal);
+	--background-modifier-active-hover: var(--miku-slate);
+	--background-modifier-border: var(--miku-slate);
+	--background-modifier-border-hover: var(--miku-cyan-deep);
+	--background-modifier-border-focus: var(--miku-teal);
+	--background-modifier-form-field: #17181e;
+	--background-modifier-message: var(--miku-charcoal);
+	--background-modifier-error: color-mix(in srgb, var(--miku-pink) 20%, var(--miku-ink));
+	--background-modifier-error-hover: color-mix(in srgb, var(--miku-pink) 30%, var(--miku-ink));
+	--background-modifier-success: color-mix(in srgb, var(--miku-teal) 20%, var(--miku-ink));
+
+	/* Text. */
+	--text-normal: var(--miku-silver);
+	--text-muted: var(--miku-steel);
+	--text-faint: #84979c;
+	--text-on-accent: var(--miku-black);
+	--text-on-accent-inverted: var(--miku-white);
+	--text-accent: var(--miku-teal);
+	--text-accent-hover: var(--miku-cyan-pale);
+	--text-success: var(--miku-cyan-soft);
+	--text-warning: #d4b5ba;
+	--text-error: #ef6b96;
+	--text-selection: color-mix(in srgb, var(--miku-teal) 28%, transparent);
+	--text-highlight-bg: color-mix(in srgb, var(--miku-pink) 28%, transparent);
+	--caret-color: var(--miku-teal);
+
+	/* Controls and boundaries. */
+	--interactive-normal: var(--miku-charcoal);
+	--interactive-hover: var(--miku-slate);
+	--interactive-accent: var(--miku-teal);
+	--interactive-accent-hover: var(--miku-cyan-soft);
+	--icon-color: #84979c;
+	--icon-color-hover: var(--miku-cyan-soft);
+	--icon-color-active: var(--miku-teal);
+	--divider-color: var(--miku-slate);
+	--divider-color-hover: var(--miku-teal);
+	--scrollbar-bg: transparent;
+	--scrollbar-thumb-bg: var(--miku-slate);
+	--scrollbar-active-thumb-bg: var(--miku-cyan-deep);
+
+	/* Component-facing palette. */
+	--miku-heading-1: var(--miku-cyan-pale);
+	--miku-heading-2: var(--miku-cyan-soft);
+	--miku-heading-3: var(--miku-teal);
+	--miku-heading-4: var(--miku-cyan-mid);
+	--miku-heading-5: var(--miku-steel);
+	--miku-heading-6: #e07b9c;
+	--miku-code-accent: var(--miku-cyan-soft);
+	--miku-code-secondary: #e07b9c;
+}
+
+.theme-light {
+	color-scheme: light;
+
+	/* Obsidian neutral scale. */
+	--color-base-00: #fff;
+	--color-base-05: var(--miku-white);
+	--color-base-10: #eef5f5;
+	--color-base-20: #e2eded;
+	--color-base-25: var(--miku-silver);
+	--color-base-30: var(--miku-cyan-pale);
+	--color-base-35: var(--miku-steel);
+	--color-base-40: #84979c;
+	--color-base-50: var(--miku-muted);
+	--color-base-60: var(--miku-graphite);
+	--color-base-70: var(--miku-slate);
+	--color-base-100: var(--miku-ink);
+
+	/* Accent and semantic colors. */
+	--accent-h: 186;
+	--accent-s: 53%;
+	--accent-l: 39%;
+	--color-accent: var(--miku-cyan);
+	--color-accent-1: var(--miku-cyan-deep);
+	--color-accent-2: #214f57;
+	--color-red: #bd3d69;
+	--color-orange: var(--miku-pink-muted);
+	--color-yellow: #9a6f35;
+	--color-green: var(--miku-cyan-deep);
+	--color-cyan: var(--miku-cyan);
+	--color-blue: var(--miku-cyan-deep);
+	--color-purple: #706d94;
+	--color-pink: #bd3d69;
+
+	/* Surfaces. */
+	--background-primary: var(--miku-white);
+	--background-primary-alt: #eef5f5;
+	--background-secondary: #e2eded;
+	--background-secondary-alt: var(--miku-silver);
+	--background-modifier-hover: color-mix(in srgb, var(--miku-cyan-soft) 42%, var(--miku-white));
+	--background-modifier-active-hover: color-mix(in srgb, var(--miku-cyan-mid) 32%, var(--miku-white));
+	--background-modifier-border: var(--miku-silver);
+	--background-modifier-border-hover: var(--miku-cyan-mid);
+	--background-modifier-border-focus: var(--miku-cyan);
+	--background-modifier-form-field: #fff;
+	--background-modifier-message: #e2eded;
+	--background-modifier-error: color-mix(in srgb, var(--miku-pink) 16%, var(--miku-white));
+	--background-modifier-error-hover: color-mix(in srgb, var(--miku-pink) 24%, var(--miku-white));
+	--background-modifier-success: color-mix(in srgb, var(--miku-teal) 18%, var(--miku-white));
+
+	/* Text. */
+	--text-normal: var(--miku-charcoal);
+	--text-muted: var(--miku-muted);
+	--text-faint: #84979c;
+	--text-on-accent: var(--miku-white);
+	--text-on-accent-inverted: var(--miku-ink);
+	--text-accent: var(--miku-cyan-deep);
+	--text-accent-hover: var(--miku-cyan-deep);
+	--text-success: var(--miku-cyan-deep);
+	--text-warning: #895169;
+	--text-error: #b72e5c;
+	--text-selection: color-mix(in srgb, var(--miku-teal) 32%, transparent);
+	--text-highlight-bg: color-mix(in srgb, var(--miku-pink) 22%, transparent);
+	--caret-color: var(--miku-cyan);
+
+	/* Controls and boundaries. */
+	--interactive-normal: #fff;
+	--interactive-hover: #dce9e9;
+	--interactive-accent: var(--miku-cyan-deep);
+	--interactive-accent-hover: #214f57;
+	--icon-color: var(--miku-muted);
+	--icon-color-hover: var(--miku-cyan);
+	--icon-color-active: var(--miku-cyan-deep);
+	--divider-color: var(--miku-silver);
+	--divider-color-hover: var(--miku-cyan);
+	--scrollbar-bg: transparent;
+	--scrollbar-thumb-bg: var(--miku-silver);
+	--scrollbar-active-thumb-bg: var(--miku-cyan-mid);
+
+	/* Component-facing palette. */
+	--miku-heading-1: var(--miku-cyan-deep);
+	--miku-heading-2: var(--miku-cyan);
+	--miku-heading-3: #397982;
+	--miku-heading-4: var(--miku-graphite);
+	--miku-heading-5: var(--miku-muted);
+	--miku-heading-6: #a93760;
+	--miku-code-accent: var(--miku-cyan-deep);
+	--miku-code-secondary: #a93760;
 }

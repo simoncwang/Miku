@@ -1,8 +1,1 @@
-/* Style icons here. */
-
-svg * {
-	stroke-linecap: square;
-	stroke-linejoin: miter;
-	rx: 0;
-	ry: 0;
-}
+/* Icon colors are supplied through the semantic variables in colors.css. */

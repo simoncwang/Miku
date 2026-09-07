@@ -1,5 +1,52 @@
-/* Style reading view and editor content here. */
+/* Document colors shared by the dark and light palettes. */
 
-:root {
-	--obsidian-theme-editor-ready: initial;
+.theme-dark,
+.theme-light {
+	--inline-title-color: var(--miku-heading-1);
+	--h1-color: var(--miku-heading-1);
+	--h2-color: var(--miku-heading-2);
+	--h3-color: var(--miku-heading-3);
+	--h4-color: var(--miku-heading-4);
+	--h5-color: var(--miku-heading-5);
+	--h6-color: var(--miku-heading-6);
+	--bold-color: var(--miku-heading-1);
+	--italic-color: var(--text-muted);
+	--list-marker-color: var(--interactive-accent);
+	--list-marker-color-hover: var(--interactive-accent-hover);
+	--hr-color: var(--divider-color);
+	--blockquote-border-color: var(--interactive-accent);
+
+	/* Links, tags, and embeds. */
+	--link-color: var(--text-accent);
+	--link-color-hover: var(--text-accent-hover);
+	--link-external-color: var(--miku-heading-3);
+	--link-external-color-hover: var(--miku-heading-1);
+	--link-unresolved-color: var(--miku-code-secondary);
+	--tag-color: var(--text-accent);
+	--tag-color-hover: var(--text-accent-hover);
+	--tag-background: color-mix(in srgb, var(--interactive-accent) 16%, transparent);
+	--tag-background-hover: color-mix(in srgb, var(--interactive-accent) 25%, transparent);
+	--embed-border-start: 2px solid var(--interactive-accent);
+
+	/* Inline and fenced code. */
+	--code-background: var(--background-secondary);
+	--code-normal: var(--text-normal);
+	--code-comment: var(--text-faint);
+	--code-function: var(--miku-code-accent);
+	--code-important: var(--miku-code-secondary);
+	--code-keyword: var(--miku-code-secondary);
+	--code-operator: var(--miku-code-accent);
+	--code-property: var(--miku-heading-3);
+	--code-punctuation: var(--text-muted);
+	--code-string: var(--miku-heading-2);
+	--code-tag: var(--miku-code-secondary);
+	--code-value: var(--miku-code-accent);
+
+	/* Tables and metadata. */
+	--table-border-color: var(--divider-color);
+	--table-header-background: var(--background-secondary);
+	--table-header-background-hover: var(--background-modifier-hover);
+	--table-row-background-hover: var(--background-modifier-hover);
+	--metadata-background: var(--background-secondary);
+	--metadata-border-color: var(--divider-color);
 }

@@ -1,5 +1,9 @@
-/* Define the theme's spacing and layout scale here. */
+/* A compact four-pixel scale for later component work. */
 
-:root {
-	--obsidian-theme-spacing-ready: initial;
+body {
+	--miku-space-1: 4px;
+	--miku-space-2: 8px;
+	--miku-space-3: 12px;
+	--miku-space-4: 16px;
+	--miku-space-5: 24px;
 }

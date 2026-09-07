@@ -1,51 +1,309 @@
-/* Define palette tokens and map them to semantic Obsidian color variables here. */
+/* Palette sampled from references/miku.png. */
 
-:root {
-	--obsidian-theme-colors-ready: initial;
+body {
+	--miku-black: #111318;
+	--miku-ink: #1f1f25;
+	--miku-charcoal: #2f2e35;
+	--miku-slate: #3a3d43;
+	--miku-graphite: #4d494d;
+	--miku-muted: #686566;
+	--miku-steel: #a5b4be;
+	--miku-silver: #d1dce0;
+	--miku-white: #f9f8f7;
+	--miku-cyan-deep: #2b6670;
+	--miku-cyan: #2f8e9a;
+	--miku-teal: #4dc5c8;
+	--miku-cyan-mid: #6db2b7;
+	--miku-cyan-soft: #90cbca;
+	--miku-cyan-pale: #b6e2e2;
+	--miku-pink: #d94f7c;
+	--miku-pink-muted: #b05976;
 }
 
-/* Define the theme's spacing and layout scale here. */
+.theme-dark {
+	color-scheme: dark;
 
-:root {
-	--obsidian-theme-spacing-ready: initial;
+	/* Obsidian neutral scale. */
+	--color-base-00: var(--miku-black);
+	--color-base-05: #17181e;
+	--color-base-10: var(--miku-ink);
+	--color-base-20: #27272e;
+	--color-base-25: var(--miku-charcoal);
+	--color-base-30: var(--miku-slate);
+	--color-base-35: #45474e;
+	--color-base-40: var(--miku-graphite);
+	--color-base-50: var(--miku-muted);
+	--color-base-60: #84979c;
+	--color-base-70: var(--miku-steel);
+	--color-base-100: var(--miku-white);
+
+	/* Accent and semantic colors. */
+	--accent-h: 182;
+	--accent-s: 52%;
+	--accent-l: 54%;
+	--color-accent: var(--miku-teal);
+	--color-accent-1: var(--miku-cyan-soft);
+	--color-accent-2: var(--miku-cyan-pale);
+	--color-red: var(--miku-pink);
+	--color-orange: #d4b5ba;
+	--color-yellow: var(--miku-cyan-pale);
+	--color-green: var(--miku-cyan-mid);
+	--color-cyan: var(--miku-teal);
+	--color-blue: var(--miku-cyan);
+	--color-purple: #8497ad;
+	--color-pink: var(--miku-pink);
+
+	/* Surfaces. */
+	--background-primary: var(--miku-ink);
+	--background-primary-alt: #27272e;
+	--background-secondary: #17181e;
+	--background-secondary-alt: var(--miku-black);
+	--background-modifier-hover: var(--miku-charcoal);
+	--background-modifier-active-hover: var(--miku-slate);
+	--background-modifier-border: var(--miku-slate);
+	--background-modifier-border-hover: var(--miku-cyan-deep);
+	--background-modifier-border-focus: var(--miku-teal);
+	--background-modifier-form-field: #17181e;
+	--background-modifier-message: var(--miku-charcoal);
+	--background-modifier-error: color-mix(in srgb, var(--miku-pink) 20%, var(--miku-ink));
+	--background-modifier-error-hover: color-mix(in srgb, var(--miku-pink) 30%, var(--miku-ink));
+	--background-modifier-success: color-mix(in srgb, var(--miku-teal) 20%, var(--miku-ink));
+
+	/* Text. */
+	--text-normal: var(--miku-silver);
+	--text-muted: var(--miku-steel);
+	--text-faint: #84979c;
+	--text-on-accent: var(--miku-black);
+	--text-on-accent-inverted: var(--miku-white);
+	--text-accent: var(--miku-teal);
+	--text-accent-hover: var(--miku-cyan-pale);
+	--text-success: var(--miku-cyan-soft);
+	--text-warning: #d4b5ba;
+	--text-error: #ef6b96;
+	--text-selection: color-mix(in srgb, var(--miku-teal) 28%, transparent);
+	--text-highlight-bg: color-mix(in srgb, var(--miku-pink) 28%, transparent);
+	--caret-color: var(--miku-teal);
+
+	/* Controls and boundaries. */
+	--interactive-normal: var(--miku-charcoal);
+	--interactive-hover: var(--miku-slate);
+	--interactive-accent: var(--miku-teal);
+	--interactive-accent-hover: var(--miku-cyan-soft);
+	--icon-color: #84979c;
+	--icon-color-hover: var(--miku-cyan-soft);
+	--icon-color-active: var(--miku-teal);
+	--divider-color: var(--miku-slate);
+	--divider-color-hover: var(--miku-teal);
+	--scrollbar-bg: transparent;
+	--scrollbar-thumb-bg: var(--miku-slate);
+	--scrollbar-active-thumb-bg: var(--miku-cyan-deep);
+
+	/* Component-facing palette. */
+	--miku-heading-1: var(--miku-cyan-pale);
+	--miku-heading-2: var(--miku-cyan-soft);
+	--miku-heading-3: var(--miku-teal);
+	--miku-heading-4: var(--miku-cyan-mid);
+	--miku-heading-5: var(--miku-steel);
+	--miku-heading-6: #e07b9c;
+	--miku-code-accent: var(--miku-cyan-soft);
+	--miku-code-secondary: #e07b9c;
 }
 
-/* Define font families, sizes, line heights, and heading variables here. */
+.theme-light {
+	color-scheme: light;
 
-:root {
-	--obsidian-theme-typography-ready: initial;
+	/* Obsidian neutral scale. */
+	--color-base-00: #fff;
+	--color-base-05: var(--miku-white);
+	--color-base-10: #eef5f5;
+	--color-base-20: #e2eded;
+	--color-base-25: var(--miku-silver);
+	--color-base-30: var(--miku-cyan-pale);
+	--color-base-35: var(--miku-steel);
+	--color-base-40: #84979c;
+	--color-base-50: var(--miku-muted);
+	--color-base-60: var(--miku-graphite);
+	--color-base-70: var(--miku-slate);
+	--color-base-100: var(--miku-ink);
+
+	/* Accent and semantic colors. */
+	--accent-h: 186;
+	--accent-s: 53%;
+	--accent-l: 39%;
+	--color-accent: var(--miku-cyan);
+	--color-accent-1: var(--miku-cyan-deep);
+	--color-accent-2: #214f57;
+	--color-red: #bd3d69;
+	--color-orange: var(--miku-pink-muted);
+	--color-yellow: #9a6f35;
+	--color-green: var(--miku-cyan-deep);
+	--color-cyan: var(--miku-cyan);
+	--color-blue: var(--miku-cyan-deep);
+	--color-purple: #706d94;
+	--color-pink: #bd3d69;
+
+	/* Surfaces. */
+	--background-primary: var(--miku-white);
+	--background-primary-alt: #eef5f5;
+	--background-secondary: #e2eded;
+	--background-secondary-alt: var(--miku-silver);
+	--background-modifier-hover: color-mix(in srgb, var(--miku-cyan-soft) 42%, var(--miku-white));
+	--background-modifier-active-hover: color-mix(in srgb, var(--miku-cyan-mid) 32%, var(--miku-white));
+	--background-modifier-border: var(--miku-silver);
+	--background-modifier-border-hover: var(--miku-cyan-mid);
+	--background-modifier-border-focus: var(--miku-cyan);
+	--background-modifier-form-field: #fff;
+	--background-modifier-message: #e2eded;
+	--background-modifier-error: color-mix(in srgb, var(--miku-pink) 16%, var(--miku-white));
+	--background-modifier-error-hover: color-mix(in srgb, var(--miku-pink) 24%, var(--miku-white));
+	--background-modifier-success: color-mix(in srgb, var(--miku-teal) 18%, var(--miku-white));
+
+	/* Text. */
+	--text-normal: var(--miku-charcoal);
+	--text-muted: var(--miku-muted);
+	--text-faint: #84979c;
+	--text-on-accent: var(--miku-white);
+	--text-on-accent-inverted: var(--miku-ink);
+	--text-accent: var(--miku-cyan-deep);
+	--text-accent-hover: var(--miku-cyan-deep);
+	--text-success: var(--miku-cyan-deep);
+	--text-warning: #895169;
+	--text-error: #b72e5c;
+	--text-selection: color-mix(in srgb, var(--miku-teal) 32%, transparent);
+	--text-highlight-bg: color-mix(in srgb, var(--miku-pink) 22%, transparent);
+	--caret-color: var(--miku-cyan);
+
+	/* Controls and boundaries. */
+	--interactive-normal: #fff;
+	--interactive-hover: #dce9e9;
+	--interactive-accent: var(--miku-cyan-deep);
+	--interactive-accent-hover: #214f57;
+	--icon-color: var(--miku-muted);
+	--icon-color-hover: var(--miku-cyan);
+	--icon-color-active: var(--miku-cyan-deep);
+	--divider-color: var(--miku-silver);
+	--divider-color-hover: var(--miku-cyan);
+	--scrollbar-bg: transparent;
+	--scrollbar-thumb-bg: var(--miku-silver);
+	--scrollbar-active-thumb-bg: var(--miku-cyan-mid);
+
+	/* Component-facing palette. */
+	--miku-heading-1: var(--miku-cyan-deep);
+	--miku-heading-2: var(--miku-cyan);
+	--miku-heading-3: #397982;
+	--miku-heading-4: var(--miku-graphite);
+	--miku-heading-5: var(--miku-muted);
+	--miku-heading-6: #a93760;
+	--miku-code-accent: var(--miku-cyan-deep);
+	--miku-code-secondary: #a93760;
+}
+
+/* A compact four-pixel scale for later component work. */
+
+body {
+	--miku-space-1: 4px;
+	--miku-space-2: 8px;
+	--miku-space-3: 12px;
+	--miku-space-4: 16px;
+	--miku-space-5: 24px;
+}
+
+/* Keep Obsidian's font choices while giving the hierarchy a crisp rhythm. */
+
+body {
+	--line-height-normal: 1.65;
+	--line-height-tight: 1.3;
+	--inline-title-weight: 700;
+	--h1-weight: 700;
+	--h2-weight: 650;
+	--h3-weight: 650;
+	--h4-weight: 600;
+	--h5-weight: 600;
+	--h6-weight: 600;
+	--bold-weight: 650;
 }
 
 /* Define corner-radius variables here. */
 
 body {
-	--radius-s: 0px;
-	--radius-m: 0px;
-	--radius-l: 0px;
-	--input-radius: 0px;
-	--tab-radius-active: 0px;
-	--checkbox-radius: 0px;
-	--toggle-radius: 0px;
-	--toggle-thumb-radius: 0px;
-	--slider-thumb-radius: 0px;
+	--radius-s: 4px;
+	--radius-m: 8px;
+	--radius-l: 12px;
+	--input-radius: 6px;
+	--tab-radius-active: 6px;
+	--checkbox-radius: 4px;
+	--toggle-radius: 999px;
+	--toggle-thumb-radius: 999px;
+	--slider-thumb-radius: 999px;
 }
 
-/* Style reading view and editor content here. */
+/* Document colors shared by the dark and light palettes. */
 
-:root {
-	--obsidian-theme-editor-ready: initial;
+.theme-dark,
+.theme-light {
+	--inline-title-color: var(--miku-heading-1);
+	--h1-color: var(--miku-heading-1);
+	--h2-color: var(--miku-heading-2);
+	--h3-color: var(--miku-heading-3);
+	--h4-color: var(--miku-heading-4);
+	--h5-color: var(--miku-heading-5);
+	--h6-color: var(--miku-heading-6);
+	--bold-color: var(--miku-heading-1);
+	--italic-color: var(--text-muted);
+	--list-marker-color: var(--interactive-accent);
+	--list-marker-color-hover: var(--interactive-accent-hover);
+	--hr-color: var(--divider-color);
+	--blockquote-border-color: var(--interactive-accent);
+
+	/* Links, tags, and embeds. */
+	--link-color: var(--text-accent);
+	--link-color-hover: var(--text-accent-hover);
+	--link-external-color: var(--miku-heading-3);
+	--link-external-color-hover: var(--miku-heading-1);
+	--link-unresolved-color: var(--miku-code-secondary);
+	--tag-color: var(--text-accent);
+	--tag-color-hover: var(--text-accent-hover);
+	--tag-background: color-mix(in srgb, var(--interactive-accent) 16%, transparent);
+	--tag-background-hover: color-mix(in srgb, var(--interactive-accent) 25%, transparent);
+	--embed-border-start: 2px solid var(--interactive-accent);
+
+	/* Inline and fenced code. */
+	--code-background: var(--background-secondary);
+	--code-normal: var(--text-normal);
+	--code-comment: var(--text-faint);
+	--code-function: var(--miku-code-accent);
+	--code-important: var(--miku-code-secondary);
+	--code-keyword: var(--miku-code-secondary);
+	--code-operator: var(--miku-code-accent);
+	--code-property: var(--miku-heading-3);
+	--code-punctuation: var(--text-muted);
+	--code-string: var(--miku-heading-2);
+	--code-tag: var(--miku-code-secondary);
+	--code-value: var(--miku-code-accent);
+
+	/* Tables and metadata. */
+	--table-border-color: var(--divider-color);
+	--table-header-background: var(--background-secondary);
+	--table-header-background-hover: var(--background-modifier-hover);
+	--table-row-background-hover: var(--background-modifier-hover);
+	--metadata-background: var(--background-secondary);
+	--metadata-border-color: var(--divider-color);
 }
 
-/* Style icons here. */
-
-svg * {
-	stroke-linecap: square;
-	stroke-linejoin: miter;
-	rx: 0;
-	ry: 0;
-}
+/* Icon colors are supplied through the semantic variables in colors.css. */
 
 /* Style menus, prompts, suggestions, and popovers here. */
+
+.theme-dark,
+.theme-light {
+	--menu-background: var(--background-secondary);
+	--menu-border-color: var(--divider-color);
+	--modal-background: var(--background-primary);
+	--modal-border-color: var(--divider-color);
+	--prompt-background: var(--background-primary);
+	--popover-background: var(--background-primary);
+	--suggestion-background: var(--background-secondary);
+}
 
 .menu {
 	padding: var(--size-2-1);
@@ -59,15 +317,47 @@ svg * {
 	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
 }
 
-/* Style sidebars, navigation, and the file explorer here. */
+/* Sidebars and file navigation. */
 
-:root {
-	--obsidian-theme-navigation-ready: initial;
+.theme-dark,
+.theme-light {
+	--titlebar-background: var(--background-secondary-alt);
+	--titlebar-background-focused: var(--background-secondary);
+	--ribbon-background: var(--background-secondary);
+	--ribbon-background-collapsed: var(--background-secondary-alt);
+	--file-header-background: var(--background-primary);
+	--file-header-background-focused: var(--background-primary);
+	--status-bar-background: var(--background-secondary);
+	--nav-item-color: var(--text-muted);
+	--nav-item-color-hover: var(--text-normal);
+	--nav-item-color-active: var(--text-accent);
+	--nav-item-color-selected: var(--text-normal);
+	--nav-item-background-hover: var(--background-modifier-hover);
+	--nav-item-background-active: color-mix(in srgb, var(--interactive-accent) 18%, transparent);
+	--nav-item-background-selected: var(--background-modifier-active-hover);
 }
 
 /* Style workspace tabs here. */
 
+.theme-dark,
+.theme-light {
+	--tab-container-background: var(--background-secondary);
+	--tab-background-active: var(--background-primary);
+	--tab-text-color: var(--text-faint);
+	--tab-text-color-active: var(--text-muted);
+	--tab-text-color-focused: var(--text-muted);
+	--tab-text-color-focused-active: var(--text-normal);
+	--tab-text-color-focused-highlighted: var(--text-accent);
+	--tab-text-color-focused-active-current: var(--text-accent);
+	--tab-divider-color: var(--divider-color);
+	--tab-outline-color: var(--divider-color);
+}
+
 .workspace-tab-header.is-active::before,
 .workspace-tab-header.is-active::after {
 	display: none;
+}
+
+.workspace-tab-header.is-active {
+	box-shadow: inset 0 2px var(--interactive-accent);
 }
